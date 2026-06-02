@@ -1,3 +1,30 @@
+# Rename It 2026 Compatibility Patch
+
+This is an unofficial fork of [rodi01/RenameIt](https://github.com/rodi01/RenameIt) with a local compatibility patch for Sketch 2026.1.2 (228390).
+
+The original Sketch plugin is no longer maintained and the upstream repository is archived. This fork keeps the original MIT license and credits, and only updates the Sketch plugin so users on newer Sketch versions can open the Rename It UI again.
+
+## What changed
+
+- Removed the old `sketch-module-google-analytics` dependency because it references Sketch metadata APIs that no longer exist in Sketch 2026.
+- Replaced direct `layer.name = ...` assignments with a `setName(...)`-first fallback for newer Sketch/CocoaScript runtimes.
+- Added compatibility shims for legacy AppKit/WebView constants used by the older `sketch-module-web-view` bundle.
+- Removed the original appcast URL from the bundled manifest so this unofficial fork does not imply official upstream updates.
+
+## Tested with
+
+- Sketch 2026.1.2 (228390)
+- Rename It 4.5.4 base plugin
+
+## Install
+
+1. Download the latest release zip from this fork.
+2. Unzip it.
+3. Double-click `Rename-It.sketchplugin`, or copy it to `~/Library/Application Support/com.bohemiancoding.sketch3/Plugins/`.
+4. Restart Sketch if the plugin menu does not refresh immediately.
+
+## Original project note
+
 # Update
 Unfortunately, Rename It for Sketch is no longer being maintained. I no longer use Sketch as my design tool, and I can't justify paying for the license. The latest tested Sketch version is 67.2. 
 
@@ -87,7 +114,7 @@ Rename selected artboards works the same way as rename selected layers. You don'
 
 ### Direct Download
 
-[![Direct Download](/docs/static/img/download_btn.png "Direct Download")](https://github.com/rodi01/RenameIt/releases/latest)
+[![Direct Download](/docs/static/img/download_btn.png "Direct Download")](https://github.com/vikilii/RenameIt-2026/releases/latest)
 
 
 ## More Info

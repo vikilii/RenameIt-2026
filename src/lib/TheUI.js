@@ -5,7 +5,6 @@
  * @Last modified time: 2017-12-02T21:22:22-08:00
  */
 import BrowserWindow from 'sketch-module-web-view'
-import track from 'sketch-module-google-analytics'
 import { Rename, FindReplace } from '@rodi01/renameitlib'
 import { renameData, findReplaceData } from './DataHelper'
 import { exclamations } from './Constants'
@@ -18,6 +17,16 @@ import {
 } from './History'
 import getTheme from '../../resources/views/theme/index'
 import { setSequenceType } from './RenameHelpers'
+
+
+function setLayerName(layer, name) {
+  const nextName = String(name)
+  if (layer && typeof layer.setName === 'function') {
+    layer.setName(nextName)
+    return
+  }
+  layer.name = nextName
+}
 
 function showUpdatedMessage(count, data) {
   const layerStr = count === 1 ? 'Layer' : 'Layers'
@@ -108,7 +117,7 @@ const theUI = (context, data, options) => {
         opts.currIdx = opts.yIdx
       }
       const layer = item.layer
-      layer.name = rename.layer(opts)
+      setLayerName(layer, rename.layer(opts))
     })
     addRenameHistory(inputData.str)
 
@@ -135,7 +144,7 @@ const theUI = (context, data, options) => {
 
       if (findReplace.match(opts)) {
         const layer = item.layer
-        layer.name = findReplace.layer(opts)
+        setLayerName(layer, findReplace.layer(opts))
         totalRenamed += 1
       }
     })
@@ -154,10 +163,9 @@ const theUI = (context, data, options) => {
     NSWorkspace.sharedWorkspace().openURL(NSURL.URLWithString(url))
   })
 
-  contents.on('track', (options) => {
-    const parsedOptions = JSON.parse(options)
-    track('UA-104184459-2', parsedOptions.hitType, parsedOptions.payload)
-  })
+  // Analytics was removed because the old dependency references Sketch APIs
+  // that no longer exist in Sketch 2026.
+  contents.on('track', () => {})
 }
 
 export default theUI

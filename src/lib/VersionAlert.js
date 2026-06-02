@@ -1,7 +1,7 @@
 import sketch from "sketch"
 
 export function isCompatible() {
-  return sketch.version.sketch >= 51
+  return parseFloat(sketch.version.sketch) >= 51
 }
 
 function buildAlert() {

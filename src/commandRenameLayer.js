@@ -7,7 +7,10 @@
 
 import { parseData } from '~/src/lib/Utilities'
 import theUI from './lib/TheUI'
+import { applySketch2026Compatibility } from './lib/Sketch2026Compat'
 import { isCompatible, showAlert } from './lib/VersionAlert'
+
+applySketch2026Compatibility()
 
 export default function (context) {
   // Check compatibility

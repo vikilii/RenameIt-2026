@@ -1,12 +1,12 @@
 {
   "name": "RenameIt",
-  "description": "Keep your Sketch files organized, batch rename layers and artboards.",
+  "description": "Unofficial Sketch 2026 compatibility patch for Rename It.",
   "author": "Rodrigo Soares",
   "identifier": "com.taptap.ninja.rename-it",
-  "version": "4.5.4",
+  "version": "4.5.5-sketch2026.1.2",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/rodi01/RenameIt"
+    "url": "https://github.com/vikilii/RenameIt-2026"
   },
   "engines": {
     "sketch": ">=51.0"
@@ -57,7 +57,6 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "sketch-module-google-analytics": "^0.2.2",
     "sketch-module-user-preferences": "^1.0.2",
     "sketch-module-web-view": "^3.4.1",
     "styled-components": "^5.1.0"

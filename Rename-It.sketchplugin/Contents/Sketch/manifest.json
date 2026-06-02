@@ -2,7 +2,7 @@
   "compatibleVersion": "51",
   "bundleVersion": 1,
   "identifier": "com.taptap.ninja.rename-it",
-  "homepage": "https://renameit.design/sketch/",
+  "homepage": "https://github.com/vikilii/RenameIt-2026",
   "icon": "icon.png",
   "commands": [
     {
@@ -53,10 +53,9 @@
       "renameit.donate"
     ]
   },
-  "version": "4.5.4",
-  "description": "Keep your Sketch files organized, batch rename layers and artboards.",
+  "version": "4.5.5-sketch2026.1.2",
+  "description": "Keep your Sketch files organized, batch rename layers and artboards. Unofficially patched for Sketch 2026.1.2.",
   "name": "Rename-It",
   "disableCocoaScriptPreprocessor": true,
-  "appcast": "https://raw.githubusercontent.com/rodi01/RenameIt/master/.appcast.xml",
   "author": "Rodrigo Soares"
 }
