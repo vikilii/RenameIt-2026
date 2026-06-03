@@ -33,7 +33,7 @@ export default function(context) {
     title: "Rename Selected Artboards",
     redirectTo: "/rename",
     width: 392,
-    height: 420
+    height: 560
   }
 
   // Load UI

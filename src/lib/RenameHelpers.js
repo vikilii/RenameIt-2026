@@ -14,7 +14,26 @@ const SEQUENCE_KEY = 'sequenceType'
  * @return {Boolean}
  */
 export function isArtboard(layer) {
-  return layer instanceof MSArtboardGroup || layer instanceof MSSymbolMaster
+  try {
+    const className = String(
+      layer && typeof layer.className === 'function' ? layer.className() : ''
+    )
+    if (className === 'MSArtboardGroup' || className === 'MSSymbolMaster') {
+      return true
+    }
+  } catch (error) {}
+
+  try {
+    if (typeof MSArtboardGroup !== 'undefined' && layer instanceof MSArtboardGroup) {
+      return true
+    }
+  } catch (error) {}
+
+  try {
+    return typeof MSSymbolMaster !== 'undefined' && layer instanceof MSSymbolMaster
+  } catch (error) {
+    return false
+  }
 }
 
 /**

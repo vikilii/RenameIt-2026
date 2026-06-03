@@ -101,7 +101,13 @@ export function parseData(context, onlyArtboards = false) {
 
 export function findReplaceDataParser(context) {
   const data = parseData(context)
-  const layers = data.doc.currentPage().children()
+  const page = data.doc.currentPage()
+  const layers =
+    typeof page.children === 'function'
+      ? page.children()
+      : typeof page.layers === 'function'
+      ? page.layers()
+      : page.children || page.layers || []
   data.allLayers = []
 
   layers.forEach((layer, i) => {

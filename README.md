@@ -7,6 +7,9 @@ The original Sketch plugin is no longer maintained and the upstream repository i
 ## What changed
 
 - Removed the old `sketch-module-google-analytics` dependency because it references Sketch metadata APIs that no longer exist in Sketch 2026.
+- Fixed `Find and Replace Layers/Artboards Names` for Sketch 2026 page layer access changes.
+- Fixed `Rename Selected Artboards` for Sketch 2026 artboard class lookup changes.
+- Increased the `Rename Selected Artboards` dialog height so the bottom buttons are visible.
 - Replaced direct `layer.name = ...` assignments with a `setName(...)`-first fallback for newer Sketch/CocoaScript runtimes.
 - Added compatibility shims for legacy AppKit/WebView constants used by the older `sketch-module-web-view` bundle.
 - Removed the original appcast URL from the bundled manifest so this unofficial fork does not imply official upstream updates.
